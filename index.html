@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" accept="video/*" id="input-tag" />
+    <div class="content">
+        <video class="videoPlayer" controls controlsList="nofullscreen nodownload noplaybackrate"
+            id="video-tag" muted>
+            <source id="video-source">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay" id="overlay">
+            <div>
+                <ul>
+                    <input type="radio" id="opt1" name="category" value="hello">
+                    <label for="opt1">Option1</label>
+                    <input type="radio" id="opt2" name="category" value="bye">
+                    <label for="opt2">Option2</label>
+                </ul>
+            </div>
+            <div>
+                <button onclick="cancelDialog()">Cancel</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
