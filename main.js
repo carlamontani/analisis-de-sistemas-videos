@@ -1,52 +1,14 @@
-let video = document.getElementById("video-tag");
+const videoFile = document.getElementById('videoFile');
+console.log("hola")
+console.log(videoFile); // logs the name of the uploaded video file
+console.log("hola2")
 
-function showDialog() {
-    let dialog = document.getElementById("overlay")
-    dialog.style.visibility = 'visible'
-}
-function hideDialog() {
-    let dialog = document.getElementById("overlay")
-    dialog.style.visibility = 'hidden'
-}
-function cancelDialog() {
-    hideDialog();
-}
 
-//video.addEventListener("click", function (event) {
-    //if (video.paused == true) {
-        //video.play();
-        //hideDialog()
-    //}
-    //else {
-        //video.pause();
-        //showDialog()
-    //}
-//});
-/*
-(function localFileVideoPlayer() {
-    'use strict'
-    var URL = window.URL || window.webkitURL
+const videoFileInput = document.getElementById('videoFile');
+    const videoPreview = document.getElementById('videoPreview');
 
-    var playSelectedFile = function (event) {
-        var file = this.files[0]
-        var type = file.type
-        var videoNode = document.querySelector('video')
-        videoNode.disablePictureInPicture = true
-        var canPlay = videoNode.canPlayType(type)
-
-        var fileURL = URL.createObjectURL(file)
-        videoNode.src = fileURL
-    }
-    var inputNode = document.querySelector('input')
-    inputNode.addEventListener('change', playSelectedFile, false)
-})()
-*/
-
-document.getElementById('addVideoBtn').addEventListener('click', function() {
-    var videoInput = document.getElementById('videoInput');
-    var videoFile = videoInput.files[0];
-    var videoURL = URL.createObjectURL(videoFile);
-    var videoElement = '<video width="100%" height="auto" controls><source src="' + videoURL + '" type="video/mp4"></video>';
-    $('#videoContainer').html(videoElement);
-  });
-  
+    videoFileInput.addEventListener('change', () => {
+      const videoFile = videoFileInput.files[0];
+      const videoURL = URL.createObjectURL(videoFile);
+      videoPreview.src = videoURL;
+    });
